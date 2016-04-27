@@ -15,3 +15,4 @@ git+https://github.com/aaronsnig501/reusable-blog-app.git
 django_debug_toolbar
 gunicorn==19.4.5
 djangorestframework==3.3
+dj_database_url
