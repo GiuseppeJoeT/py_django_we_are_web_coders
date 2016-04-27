@@ -6,7 +6,8 @@
 
 # User-specific stuff:
 .idea/
-*.pyc
+.pyc
+db.sqlite3
 
 ## File-based project format:
 *.iws
