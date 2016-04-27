@@ -16,3 +16,4 @@ django_debug_toolbar
 gunicorn==19.4.5
 djangorestframework==3.3
 dj_database_url
+mysql-python==1.2.5
