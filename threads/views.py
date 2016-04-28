@@ -29,6 +29,7 @@ def thread_vote(request, thread_id, subject_id):
 
     return redirect(reverse('thread', args={thread_id}))
 
+
 def delete_post(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     thread_id = post.thread.id
