@@ -24,6 +24,7 @@ from accounts.views import register, profile, login, logout, cancel_subscription
 from threads import views as forum_views
 from polls import api_views
 from django.contrib.staticfiles import views as static_views
+from .settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -50,6 +51,7 @@ urlpatterns = [
     # Blog URLs
     url(r'^blog/', include('reusable_blog.urls')),
 
+
     # Forum URLs
     url(r'^forum/$', forum_views.forum),
     url(r'^forum/(?P<subject_id>\d+)/$', forum_views.threads, name='threads'),
@@ -67,4 +69,5 @@ urlpatterns = [
 
     # STATIC URL
     url(r'^static/(?P<path>.*)$', static_views.serve),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': MEDIA_ROOT}),
 ]

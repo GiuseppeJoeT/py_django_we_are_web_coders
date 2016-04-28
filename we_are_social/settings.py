@@ -164,4 +164,7 @@ PAYPAL_RECEIVER_EMAIL = 'tr4nt0n@gmail.com'
 DATABASES['default'] = dj_database_url.parse(
     "mysql://b82205813f9748:90aa7947@eu-cdbr-west-01.cleardb.com/heroku_cb52881c0004c6d")
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 
