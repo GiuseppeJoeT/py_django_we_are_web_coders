@@ -66,15 +66,18 @@ def edit_post(request, thread_id, post_id):
         return render(request, 'forum/post_form.html', args)
 
 
+@login_required
 def new_thread(request, subject_id):
     subject = get_object_or_404(Subject, pk=subject_id)
     poll_subject_formset = formset_factory(PollSubjectForm, extra=3)
+
     if request.method == "POST":
         thread_form = ThreadForm(request.POST)
         post_form = PostForm(request.POST)
         poll_form = PollForm(request.POST)
         poll_subject_formset = poll_subject_formset(request.POST)
-        if thread_form.is_valid() and post_form.is_valid() and poll_form.is_valid() and poll_subject_formset.is_valid():
+
+        if thread_form.is_valid() and post_form.is_valid():
             thread = thread_form.save(False)
             thread.subject = subject
             thread.user = request.user
@@ -85,19 +88,19 @@ def new_thread(request, subject_id):
             post.thread = thread
             post.save()
 
-            poll = poll_form.save(False)
-            poll.thread = thread
-            poll.save()
+            if poll_form.is_valid() and poll_subject_formset.is_valid() and request.POST.get('is_a_poll', None):
+                poll = poll_form.save(False)
+                poll.thread = thread
+                poll.save()
 
-            for subject_form in poll_subject_formset:
-                subject = subject_form.save(False)
-                subject.poll = poll
-                subject.save()
+                for subject_form in poll_subject_formset:
+                    subject = subject_form.save(False)
+                    subject.poll = poll
+                    subject.save()
 
-            messages.success(request, "You have create a new thread!")
+            messages.success(request, "You have created a new thread!")
 
-            return redirect(request('thread', args={thread.pk}))
-
+            return redirect(reverse('thread', args={thread.pk}))
     else:
         thread_form = ThreadForm()
         post_form = PostForm(request.POST)
