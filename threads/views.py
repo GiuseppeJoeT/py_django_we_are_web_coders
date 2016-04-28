@@ -7,7 +7,7 @@ from django.core.urlresolvers import reverse
 from django.template.context_processors import csrf
 from .forms import ThreadForm, PostForm
 from django.forms import formset_factory
-from polls.forms import PollSubjectForm
+from polls.forms import PollSubjectForm, PollForm
 from polls.models import PollSubject
 
 
