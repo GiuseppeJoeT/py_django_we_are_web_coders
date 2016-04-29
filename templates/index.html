@@ -1,5 +1,88 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Hello, World!</h2>
-    <p>Our very simple site</p>
+
+    <!-- Navigation -->
+    <div id="navigation">
+        <nav class="navbar navbar-custom" role="navigation">
+                              <div class="container">
+                                    <div class="row">
+                                          <div class="col-md-3">
+                                                   <div class="site-logo">
+                                                            <a href="/" class="brand">W. A. W. C.</a>
+                                                    </div>
+                                          </div>
+
+
+                                          <div class="col-md-9">
+
+                                                      <!-- Brand and toggle get grouped for better mobile display -->
+                                          <div class="navbar-header">
+                                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                                                <i class="fa fa-bars"></i>
+                                                </button>
+                                          </div>
+                                                      <!-- Collect the nav links, forms, and other content for toggling -->
+                                                      <div class="collapse navbar-collapse" id="menu">
+                                                            <ul class="nav navbar-nav navbar-right">
+                                                                  <li class="active"><a href="#intro">Home</a></li>
+                                                                  <li><a href="#about">About Us</a></li>
+																   <li><a href="#products">Products</a></li>
+                                                                  <li><a href="#magazines">Magazines</a></li>
+                                                                 <li><a href="#forum">Forum</a></li>
+                                                                  <li><a href="#blog">Blog</a></li>
+                                                                  <li><a href="#profile">Profile</a></li>
+                                                                  <li><a href="#contact">Contact</a></li>
+                                                            </ul>
+                                                      </div>
+                                                      <!-- /.Navbar-collapse -->
+
+                                          </div>
+                                    </div>
+                              </div>
+                              <!-- /.container -->
+                        </nav>
+    </div>
+    <!-- /Navigation -->
+
+    <!-- Section: about -->
+    <section id="about" class="home-section color-dark bg-white">
+		<div class="container marginbot-50">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="animatedParent">
+					<div class="section-heading text-center animated bounceInDown">
+					<h2 class="h-bold">About our team</h2>
+					<div class="divider-header"></div>
+					</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="container">
+
+
+        <div class="row">
+
+
+            <div class="col-lg-8 col-lg-offset-2 animatedParent">
+				<div class="text-center">
+					<p>
+					Lorem ipsum dolor sit amet, vis tale malis tacimates et, graece doctus omnesque ne est, deserunt pertinacia ne nam. Pro eu simul affert referrentur, natum mutat erroribus te his
+					</p>
+					<p>
+					Ne mundi fabulas corrumpit vim, nulla vivendum conceptam eu nam. Ius ex principes complectitur, ex quo duis suscipit. Ius fastidii reprimique no. Sadipscing appellantur pri ad. Oratio moderatius definitiones cum ex, mea ne brute vivendum percipitur.
+					</p>
+					<a href="#service" class="btn btn-skin btn-scroll">What we do</a>
+				</div>
+            </div>
+
+
+        </div>
+		</div>
+
+	</section>
+	<!-- /Section: about -->
+
 {% endblock %}
