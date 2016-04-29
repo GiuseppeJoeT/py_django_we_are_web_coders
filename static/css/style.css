@@ -10,6 +10,7 @@
 body {
     width: 100%;
     height: 100%;
+	padding-top: 0px !important;
     font-family: 'Ek Mukta', sans-serif;
 	font-weight: 300;
     color: #666;
