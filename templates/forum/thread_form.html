@@ -14,7 +14,7 @@
     <section>
         <div class="col-md-9">
 
-            <form method="post" action="{% url 'new_thread' subject_id %}">
+            <form method="post" action="{% url 'new_thread' subject.id %}">
 
                 {% csrf_token %}
                 <div class="form-group">
